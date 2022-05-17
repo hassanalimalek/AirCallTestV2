@@ -1,9 +1,9 @@
-import { boxProperties, maxSmall, theme } from '../../shared-styles';
-import { omitCSSProps, omitProps } from '../../shared-utils/props';
-import { ButtonProps } from '../../../types';
-import { Button as AntButton } from 'antd';
-import { forwardRef } from 'react';
-import styled, { css } from 'styled-components';
+import { boxProperties, maxSmall, theme } from '../../shared-styles'
+import { omitCSSProps, omitProps } from '../../shared-utils/props'
+import { ButtonProps } from '../../../types'
+import { Button as AntButton } from 'antd'
+import { forwardRef } from 'react'
+import styled, { css } from 'styled-components'
 
 const buttonBase = css`
   align-items: center;
@@ -33,7 +33,7 @@ const buttonBase = css`
   @media only screen and (max-width: ${maxSmall}) {
     font-size: 14px !important;
   }
-`;
+`
 
 const InvertedButton = css<ButtonProps>`
   ${buttonBase};
@@ -54,7 +54,7 @@ const InvertedButton = css<ButtonProps>`
       opacity: 0.4;
       pointer-events: none;
     `}
-`;
+`
 
 const PrimaryButton = css<ButtonProps>`
   ${buttonBase};
@@ -76,7 +76,7 @@ const PrimaryButton = css<ButtonProps>`
       opacity: 0.4;
       pointer-events: none;
     `}
-`;
+`
 
 const BasicButton = css<ButtonProps>`
   ${buttonBase};
@@ -95,13 +95,13 @@ const BasicButton = css<ButtonProps>`
       border-color: ${theme.lemonGrass};
       color: ${theme.lemonGrass};
     `}
-`;
+`
 
 const DisabledButton = css<ButtonProps>`
   ${PrimaryButton};
   opacity: 0.4;
   pointer-events: none;
-`;
+`
 
 const TransparentButton = css<ButtonProps>`
   ${buttonBase};
@@ -112,25 +112,25 @@ const TransparentButton = css<ButtonProps>`
     background: transparent !important;
     color: ${theme.lemonGrass};
   }
-`;
+`
 
 const SmallButton = css<ButtonProps>`
   ${buttonBase};
   padding: padding: 10px 16px !important;
   height: 34px;
-`;
+`
 
 const StandardButton = css<ButtonProps>`
 ${buttonBase};
   padding: padding: 13px 16px !important;
   height: 40px;
-`;
+`
 
 const LargeButton = css<ButtonProps>`
 ${buttonBase};
   padding: padding: 15px 24px !important;
   height: 44px;
-`;
+`
 
 export const buttonStyles = css<ButtonProps>`
   ${({ kind }) => {
@@ -138,23 +138,23 @@ export const buttonStyles = css<ButtonProps>`
       case 'disabled':
         return css`
           ${DisabledButton}
-        `;
+        `
       case 'basic':
         return css`
           ${BasicButton};
-        `;
+        `
       case 'transparent':
         return css`
           ${TransparentButton}
-        `;
+        `
       case 'inverted':
         return css`
           ${InvertedButton}
-        `;
+        `
       default:
         return css`
           ${PrimaryButton};
-        `;
+        `
     }
   }};
 
@@ -163,32 +163,32 @@ export const buttonStyles = css<ButtonProps>`
       case 'small':
         return css`
           ${SmallButton}
-        `;
+        `
       case 'large':
         return css`
           ${LargeButton}
-        `;
+        `
       default:
         return css`
           ${StandardButton}
-        `;
+        `
     }
   }};
-`;
+`
 
 export const StyledButton = styled(
   forwardRef<HTMLButtonElement, ButtonProps>(({ children, ...props }, ref) => {
-    const restProps = omitProps(props, ['active', 'kind', 'fluid', 'size']);
-    const domProps = omitCSSProps(restProps);
+    const restProps = omitProps(props, ['active', 'kind', 'fluid', 'size'])
+    const domProps = omitCSSProps(restProps)
     return (
       <AntButton ref={ref} {...domProps}>
         {children}
       </AntButton>
-    );
+    )
   })
 )`
   ${buttonStyles};
   && {
     ${boxProperties};
   }
-`;
+`

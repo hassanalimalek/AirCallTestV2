@@ -10,3 +10,8 @@ export const LOGIN = gql`
                 user { id,username }
             }
 }`
+
+// export const USER_CHECK = gql`
+//     query() 
+
+// `

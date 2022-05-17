@@ -1,2 +1,2 @@
-export * from './Button';
-export { buttonStyles } from './elements';
+export * from './Button'
+export { buttonStyles } from './elements'

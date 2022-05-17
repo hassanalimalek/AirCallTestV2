@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-import { BoxProperties } from '../../types';
+import { BoxProperties } from '../../types'
 
 export const omitProps = <T, B extends keyof BoxProperties>(
   props: T & BoxProperties,
@@ -17,10 +17,10 @@ export const omitProps = <T, B extends keyof BoxProperties>(
 ): BoxProperties => {
   for (const key in componentSpecificNonDOMProps) {
     // @ts-ignore
-    delete props[key];
+    delete props[key]
   }
-  return props;
-};
+  return props
+}
 
 export const omitCSSProps = <T, B extends keyof BoxProperties>(
   props: T & BoxProperties
@@ -124,8 +124,8 @@ export const omitCSSProps = <T, B extends keyof BoxProperties>(
     minWidth,
     maxWidth,
     ...restProps
-  } = props;
+  } = props
 
   // @ts-ignore
-  return restProps;
-};
+  return restProps
+}
