@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import { ButtonProps } from '../../../types'
 import { forwardRef } from 'react'
 

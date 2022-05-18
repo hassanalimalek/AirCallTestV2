@@ -1,1 +1,10 @@
-{    "presets": ["next/babel"],    "plugins": [["styled-components", {"ssr": true}]]}
+{
+  "presets": ["next/babel"],
+  "plugins": [
+    [
+      "styled-components",
+      { "ssr": true },
+      "@babel/plugin-transform-react-display-name"
+    ]
+  ]
+}
